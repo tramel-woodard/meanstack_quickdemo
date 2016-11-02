@@ -56,6 +56,15 @@ router.get("/login", function(req, res) {
     res.render("login");
 });
 
+function operationGetout(req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        req.flash("info", "You must be logged in to view profile.");
+        res.redirect("/login");
+    }
+}
+
 router.post("/login", passport.authenticate("login", {
     successRedirect: "/",
     failureRedirect: "/login",
@@ -74,6 +83,10 @@ router.get("/users/:username", function(req, res, next) {
             }
             res.render("profile", { user: user });
         });
+});
+
+router.get("/edit", operationGetout, function(req, res) {
+    res.render("edit");
 });
 
 router.get("/logout", function(req, res) {
