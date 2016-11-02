@@ -1,0 +1,20 @@
+<% include _header %>
+
+<div class="container">
+    <div class="row">
+
+        <% if ((currentUser) && (currentUser.id === user.id)) { %>
+            <a href="/edit" class="pull-right">Edit your profile</a>
+        <% } %>
+
+        <h1><%= user.name() %></h1>
+        <h3>Welcome to the crew ;-)</h3>
+
+        <% if (user.aboutMe) { %>
+            <p><%= user.aboutMe %></p>
+        <% } %>
+
+    </div>
+</div>
+
+<% include footer %>
