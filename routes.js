@@ -56,6 +56,12 @@ router.get("/login", function(req, res) {
     res.render("login");
 });
 
+router.post("/login", passport.authenticate("login", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true
+}));
+
 router.get("/users/:username", function(req, res, next) {
     User.findOne({ username: req.params.username },
         function(err, user) {
