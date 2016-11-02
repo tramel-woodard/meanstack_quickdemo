@@ -10,9 +10,9 @@ var routes = require("./routes");
 var usePassport = require("./passport");
 
 var app = express();
-usePassport();
 
 mongoose.connect("mongodb://localhost:27017/meandemo");
+usePassport();
 
 app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
