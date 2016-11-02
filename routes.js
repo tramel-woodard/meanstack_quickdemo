@@ -89,6 +89,19 @@ router.get("/edit", operationGetout, function(req, res) {
     res.render("edit");
 });
 
+router.post("/edit", operationGetout, function(req, res, next) {
+    req.user.socialName = req.body.socialName;
+    req.user.aboutMe = req.body.aboutMe;
+    req.user.save(function(err) {
+        if (err) {
+            next(err);
+            return;
+        }
+        req.flash("info", "Your account has been updated.");
+        res.redirect("/edit");
+    });
+});
+
 router.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
