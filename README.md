@@ -4,4 +4,23 @@ I'm going to quickly code out this demo for Johnathan and friends to show my com
 
 This demo is under the assumption that you have a copy of MongoDB on your computer and are able to run both "mongod" and "mongo" commands on either your Command Prompt (Windows) or Terminal (Mac).
 
-I will start by shrinkwrapping a few js libraries I know to not have any issues into my package.json file, and then later will create update to show the installation methods.
+### Installation
+Clone the git repository to your local directory, change to the 'meanstack_quickdemo' directory and install all dependencies from the package.json file using the 'npm install' command:
+```sh
+$ git clone git@github.com:tramel-woodard/meanstack_quickdemo.git
+$ cd meanstack_quickdemo
+$ npm install
+```
+
+### Running the Demo
+Run the following command (in Terminal for Mac or Command Prompt for Windows) to launch the routing demo:
+```sh
+$ npm start
+```
+Finally, open your preferred browser and visit the following URL:
+```sh
+http://localhost:3000
+```
+
+# License
+ISC (License dependent upon individual node packages)
