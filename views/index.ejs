@@ -1,20 +1,24 @@
 <% include _header %>
 
-<h1>MEAN Social App</h1>
+<div class="container">
+    <div class="row">
+        <h1>MEAN Social App</h1>
 
-<% users.forEach(function(user) { %>
-    <div class="panel panel-default">
-        <div class-"panel-heading">
-            <a href="/users/<%= user.username %>">
-                <%= user.name() %>
-            </a>
-        </div>
-        <% if (user.aboutMe) { %>
-            <div class="panel-body">
-                <%= user.aboutMe %>
+        <% users.forEach(function(user) { %>
+            <div class="panel panel-default">
+                <div class-"panel-heading">
+                    <a href="/users/<%= user.username %>">
+                        <%= user.name() %>
+                    </a>
+                </div>
+                <% if (user.aboutMe) { %>
+                    <div class="panel-body">
+                        <%= user.aboutMe %>
+                    </div>
+                <% } %>
             </div>
-        <% } %>
+        <% }) %>
     </div>
-<% }) %>
+</div>
 
 <% include _footer %>

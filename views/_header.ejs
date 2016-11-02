@@ -9,7 +9,7 @@
         <div class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="navbar-brand" href="/">MEAN Social</a>
+                    <a class="navbar-brand" href="/">MEAN Social</a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -32,9 +32,10 @@
                     <% } %>
                 </ul>
             </div>
+        </div>
 
-            <div class="container">
-
+        <div class="container">
+            <div class="row">
                 <% errors.forEach(function(error) { %>
                     <div class="alert alert-danger" role="alert">
                         <%= error %>
@@ -46,3 +47,5 @@
                         <%= info %>
                     </div>
                 <% }) %>
+            </div>
+        </div>
