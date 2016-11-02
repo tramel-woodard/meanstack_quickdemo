@@ -52,6 +52,10 @@ router.post("/signup", function(req, res, next) {
     failureFlash: true
 }));
 
+router.get("/login", function(req, res) {
+    res.render("login");
+});
+
 router.get("/users/:username", function(req, res, next) {
     User.findOne({ username: req.params.username },
         function(err, user) {
