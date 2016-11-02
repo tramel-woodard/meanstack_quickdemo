@@ -59,7 +59,8 @@ router.get("/users/:username", function(req, res, next) {
                 return next(err);
             }
             if (!user) {
-                return next(404);
+                req.flash("error", "User doesn't exist. Please try again.");
+                return res.redirect("/");
             }
             res.render("profile", { user: user });
         });
