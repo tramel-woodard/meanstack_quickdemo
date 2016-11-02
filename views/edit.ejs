@@ -7,9 +7,7 @@
         placeholder="Display Name"
         value="<%= currentUser.socialName || "" %>">
     <textarea name="aboutMe" class="form-control"
-        placeholder="Share with the world">
-        <%= currentUser.aboutMe || "" %>
-    </textarea>
+        placeholder="Share with the world"><%= currentUser.aboutMe || "" %></textarea>
     <input type="submit" value="Edit" class="btn btn-primary btn-block">
 </form>
 
