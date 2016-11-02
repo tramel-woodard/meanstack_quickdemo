@@ -7,8 +7,11 @@ var session = require("express-session");
 var flash = require("connect-flash");
 
 var routes = require("./routes");
+var usePassport = require("./passport");
 
 var app = express();
+usePassport();
+
 
 mongoose.connect("mongodb://localhost:27017/meandemo");
 
